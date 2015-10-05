@@ -60,8 +60,7 @@ if has('iconv')
    let s:enc_euc = 'eucjp-ms'
    let s:enc_jis = 'iso-2022-jp-3'
  " iconvがJISX0213に対応しているかをチェック
- elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==#
-"\xad\xc5\xad\xcb"
+ elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
    let s:enc_euc = 'euc-jisx0213'
    let s:enc_jis = 'iso-2022-jp-3'
  endif
@@ -148,6 +147,7 @@ set backup
 set number "行番号をつける
 set history=100
 set list
+set nobackup
 set listchars=tab:\ \ ,extends:<,trail:\
 
 set fileencoding=utf-8　　　　 "UTF8
